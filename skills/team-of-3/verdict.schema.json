@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": ["PASS", "ISSUES", "BLOCKED"],
+      "description": "The verdicts the critic MODEL may emit. PASS = no substantive issues against the ruler. ISSUES = substantive gaps found. BLOCKED = cannot judge (needs context only the human has). Note: UNABLE_TO_REVIEW is a seam-only state emitted by critic.sh on system failure (it bypasses this schema) — the model must never return it; use BLOCKED instead."
+    },
+    "issues": {
+      "type": ["array", "null"],
+      "description": "Populated only when verdict is ISSUES; otherwise null.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ruler_item": {"type": "string", "description": "Which ruler checklist item this violates."},
+          "problem": {"type": "string", "description": "The specific, substantive gap."},
+          "severity": {"type": "string", "enum": ["critical", "moderate", "minor"]},
+          "location": {"type": ["string", "null"], "description": "Where in the artifact the gap is — section number or requirement id (file:line in code mode). Null if it applies to the whole artifact."}
+        },
+        "required": ["ruler_item", "problem", "severity", "location"]
+      }
+    },
+    "reason": {
+      "type": ["string", "null"],
+      "description": "Populated when verdict is BLOCKED or UNABLE_TO_REVIEW; otherwise null."
+    }
+  },
+  "required": ["verdict", "issues", "reason"]
+}

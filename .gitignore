@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+
+# Codex / auth — lives in the user's own session, never in the repo
+.codex/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Critic seam scratch (the seam uses system temp, but ignore any local strays)
+critic_out.*
+critic_payload.*
+critic_cwd.*
