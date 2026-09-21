@@ -1,0 +1,14 @@
+# Secrets — NEVER commit
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Cached review data (can be large; re-pullable)
+data/*
+!data/.gitkeep
+
+# OS
+.DS_Store

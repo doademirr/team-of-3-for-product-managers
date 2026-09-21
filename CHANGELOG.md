@@ -2,6 +2,9 @@
 
 Capability milestones for the Team-of-3 harness. Newest first.
 
+## v1.4 — first tool task (`market-gap-finder`)
+Added a third task shape: a *tool* task, alongside the convergent and divergent generate→critique tasks. `market-gap-finder` is a real tool that discovers a niche's players, scrapes their customer reviews (App Store, Google Play, Reddit, Trustpilot), and reports the cross-product gaps no one serves. It lights up the Phase-1 Discovery "market analysis" stage in the locator. Because a tool carries its own quality gates (a worth-it source gate, never-invent synthesis, fail-closed handling, and the user's player-set approval), the locator routes it straight to the tool and **skips the critic loop** — a critique of the tool's *output* is a possible future upgrade, not part of this release.
+
 ## v1.3 — cross-session project memory
 The harness remembers projects across sessions — one short file per project in `projects/`, read at the start (warm start / resume / route) and written back on task completion. Auto-resumes with a single project, asks which with several. State only; it does not track timelines.
 

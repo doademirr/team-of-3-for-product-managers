@@ -30,12 +30,13 @@ skills/
 │   └── projects/           cross-session project memory (one file per project)
 ├── write-prd/          generator: interview-first PRD writer
 ├── write-user-stories/ generator: PRD → INVEST-checked user stories
-└── prioritise-ideas/   generator: divergent decision framing
+├── prioritise-ideas/   generator: divergent decision framing
+└── market-gap-finder/  tool: review-driven market gap analysis (Phase-1 Discovery)
 PLAYBOOK.md             the 0→1 product playbook the generators ground on
 CODING-PRACTICES.md     the baseline the build-feature task follows
 ```
 
-The wired tasks: **write-prd**, **write-user-stories**, **prioritise-ideas** (divergent), and **build-feature** (code). One shared loop; only the generator and ruler change per task.
+The wired tasks: **write-prd**, **write-user-stories**, **prioritise-ideas** (divergent), and **build-feature** (code) — plus **market-gap-finder**, a *tool* task (it runs a real tool with its own gates instead of the generate→critique loop). One shared loop; only the generator and ruler change per task.
 
 ## Requirements
 

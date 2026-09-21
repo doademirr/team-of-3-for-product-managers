@@ -32,7 +32,8 @@ If Step 0.4 **resumed** a project, its stage is already known — **confirm and 
 | **Phase 0 — Problem** — prioritise between ideas | **prioritise-ideas** (divergent) | **Wired ✅** |
 | **Phase 0 — Problem** — user research | `user-research` (separate skill) | Not in the harness |
 | **Phase 0 — Problem** — market sizing | — | Not wired |
-| **Phase 1 — Discovery** — competitor teardown | competitor-teardown (method doc) | Not in the harness |
+| **Phase 1 — Discovery** — market gap analysis (review-driven) | **market-gap-finder** (tool) | **Wired ✅ (tool)** |
+| **Phase 1 — Discovery** — competitor teardown (self-centred) | competitor-teardown (method doc) | Not in the harness |
 | **Phase 1 — Discovery** — concept / prototype validation | — | Not wired |
 | **Phase 1–2 → Build** — write the PRD | **write-prd** | **Wired ✅** |
 | **Phase 3 — Build** — break the PRD into user stories | **write-user-stories** | **Wired ✅** |
@@ -40,6 +41,7 @@ If Step 0.4 **resumed** a project, its stage is already known — **confirm and 
 | **Phase 4–7 — Evals · Launch · Measure · Hygiene** | — | Not wired |
 
 - The user names a **wired** stage → proceed to Step 1 with that task.
+- **Tool tasks (e.g. market gap analysis → `market-gap-finder`)** are the exception to the loop: they are real tools with their *own* quality gates, not generate→critique tasks. Route straight to the tool's skill (`/market-gap-finder`), let it run (it handles its own approval + gates), then come back to **Step 5** for the next-stage nudge. **Do not** run Steps 1–6 / the critic loop on a tool task.
 - The user names an **unwired** stage → say so plainly, point to a separate skill/method if one exists, and offer the nearest wired task only if it genuinely fits. Never improvise an unwired task (Step 0).
 - The user already named a task explicitly (e.g. "/team-of-3 write a PRD") → skip the question, confirm the stage, go.
 

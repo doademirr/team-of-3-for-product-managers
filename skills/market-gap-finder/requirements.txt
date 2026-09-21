@@ -1,0 +1,12 @@
+# Synthesis
+anthropic>=0.40
+
+# Adapters
+praw>=7.7               # Reddit (official API client)
+google-play-scraper>=1.2 # Google Play reviews (no key)
+requests>=2.32          # Apple RSS feed + Trustpilot HTML
+beautifulsoup4>=4.12    # Trustpilot HTML parsing
+lxml>=5.0               # fast parser for bs4
+
+# Config
+python-dotenv>=1.0
