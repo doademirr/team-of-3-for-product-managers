@@ -38,7 +38,13 @@ If Step 0.4 **resumed** a project, its stage is already known — **confirm and 
 | **Phase 1–2 → Build** — write the PRD | **write-prd** | **Wired ✅** |
 | **Phase 3 — Build** — break the PRD into user stories | **write-user-stories** | **Wired ✅** |
 | **Phase 3 — Build** — implement a feature | **build-feature** | **Wired ✅** |
-| **Phase 4–7 — Evals · Launch · Measure · Hygiene** | — | Not wired |
+| **Before a PRD is final or a new capability is built** — poke first | **Poke first** (practice, below) | **Always ✅** |
+| **Phase 4 — Evals** — before anyone else uses it | **Evals check** (practice, below) | **Always ✅** |
+| **Phase 5–7 — Launch · Measure · Hygiene** | — | Not wired |
+
+**Evals check (always).** Before a product or a major change reaches real users, test the whole product, not only the feature. Start from the tests the project already has and fill the gaps: a case with an expected result for each main behaviour; failure cases (missing data, unclear input, input out of scope); and safety cases, where one failure blocks release. AI output that can't be checked exactly is scored against a written rubric by a different model from the one that wrote it. Test data must not be the data used to build the product. Report what passed, what failed and what isn't covered. The user sets the pass bar and signs off release. Live user metrics wait for real users; this doesn't.
+
+**Poke first (always).** Before finalising a PRD or building a new capability, run a small sample of real or realistic data through the roughest working version. Set a time limit. The output is a list of what we didn't know, added to the PRD's open questions. Nothing from this stage counts as finished. Real personal data stays private; use synthetic data if there's no permission. If a new project or capability reaches `write-prd` or `build-feature` with no poke done, offer it first.
 
 - The user names a **wired** stage → proceed to Step 1 with that task.
 - **Tool tasks (e.g. market gap analysis → `market-gap-finder`)** are the exception to the loop: they are real tools with their *own* quality gates, not generate→critique tasks. Route straight to the tool's skill (`/market-gap-finder`), let it run (it handles its own approval + gates), then come back to **Step 5** for the next-stage nudge. **Do not** run Steps 1–6 / the critic loop on a tool task.
@@ -142,7 +148,7 @@ The user sees output **only** when one of these fires; otherwise the loop runs s
 - `prioritise-ideas` done → "Once you've picked, the next wired step is writing the PRD for the chosen idea — want to run **write-prd**?" (user research / concept validation sit between but aren't in the harness — name them.)
 - `write-prd` done → "Next stage is user stories — want to progress to **write-user-stories** on this PRD?"
 - `write-user-stories` done → "Next is implementation — want to run **build-feature**?"
-- `build-feature` done → next is Evals / QA, not wired yet — say so.
+- `build-feature` done → if this goes to real users next, offer the **Evals check**. Otherwise offer the next story.
 
 This is the consultant working end-to-end with the user: it nudges, they choose.
 
@@ -150,7 +156,7 @@ This is the consultant working end-to-end with the user: it nudges, they choose.
 
 Each task has its own ruler — convergent tasks a definition-of-done (6A–6C), the divergent task a decision-frame checklist (6D). The critic critiques the draft against **the ruler the registry row names**, not its own taste. The registry maps each task to its ruler below.
 
-### Step 6A — PRD checklist (v2)
+### Step 6A — PRD checklist (v3)
 
 The definition-of-done for `write-prd`. **Two tiers:** a **generic core** that applies to every product in every industry, plus an **industry pack** that fires only when relevant. Sourced from the `write-prd` 10-section structure + `PLAYBOOK.md` definition phase (+ your own HealthTech/AI checklist as the industry pack).
 
@@ -163,6 +169,7 @@ The definition-of-done for `write-prd`. **Two tiers:** a **generic core** that a
 - [ ] Key UX behaviours / flows defined — the *what*, not the *how*.
 - [ ] Risky assumptions surfaced; dependencies named.
 - [ ] No invented requirements or evidence — gaps captured as open questions or **flagged** assumptions.
+- [ ] **Unknowns table complete** — section 9 gives each unknown's source, confidence, how we'll find out, and whether it blocks build. The critic adds what nobody has considered.
 
 **Tier 2 — Industry pack · HealthTech / AI (fires only if the product involves AI or health data):**
 - [ ] Accuracy target present (or flagged "needs a number").

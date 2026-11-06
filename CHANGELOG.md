@@ -2,6 +2,12 @@
 
 Capability milestones for the Team-of-3 harness. Newest first.
 
+## v1.6 — evals check
+Added an Evals check as an always-on practice: before a product or major change reaches real users, test the whole product, including failure and safety cases, and report what isn't covered. The user sets the pass bar and signs off release.
+
+## v1.5 — poke first and PRD unknowns
+Added Poke first as an always-on practice: run a small sample of real or realistic data through the roughest working version, so you find out what you don't know. The PRD's open questions became an unknowns table that the user, Claude and the critic all add to, and the PRD ruler now checks it.
+
 ## v1.4 — first tool task (`market-gap-finder`)
 Added a third task shape: a *tool* task, alongside the convergent and divergent generate→critique tasks. `market-gap-finder` is a real tool that discovers a niche's players, scrapes their customer reviews (App Store, Google Play, Reddit, Trustpilot), and reports the cross-product gaps no one serves. It lights up the Phase-1 Discovery "market analysis" stage in the locator. Because a tool carries its own quality gates (a worth-it source gate, never-invent synthesis, fail-closed handling, and the user's player-set approval), the locator routes it straight to the tool and **skips the critic loop** — a critique of the tool's *output* is a possible future upgrade, not part of this release.
 

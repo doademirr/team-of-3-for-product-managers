@@ -50,7 +50,7 @@ Write the PRD in this structure, grounded **only** in the user's answers:
 6. UX / key behaviours (the *what*, not the *how*)
 7. *[AI / regulated only: accuracy target, failure bounds, HITL placement, regulatory classification]*
 8. Risks, assumptions, dependencies
-9. Open questions (include every "I don't know yet")
+9. Unknowns and open questions — a table: Unknown | Raised by (user / Claude / critic) | Confidence | How we'll find out | Blocks build? Include every "I don't know yet", low-confidence items and anything not yet concrete. Claude adds its own while drafting; the critic adds more in review. Discovery and the poke-first step set out to answer these.
 10. Appendix (evidence, links)
 
 Grounding rules:
