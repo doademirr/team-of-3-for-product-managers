@@ -2,6 +2,12 @@
 
 Capability milestones for the Team-of-3 harness. Newest first.
 
+## v1.8 — Gatekeeper, in advice mode
+Added Step 4.5 and `GATEKEEPER.md`, which decide who decides: Claude alone, or the user. Before Claude acts on a decision the user hasn't made, it asks seven ordered questions: harm, Red, tenets and recorded decisions, the main result, whether it's worth doing, whether it's reversible, and anything left. The questions are the same for every project; each project supplies only its harm question, Red list and tenets. It ships in advice mode: it can send the user a decision the project's rules would let Claude make, never the other way, and it gives no recommendation on changes to how results are calculated. Every decision that reaches the user is logged with "did this need you?", and solo calls switch on only when that log meets a stated bar.
+
+## v1.7 — reads the current phase only
+Step 0.5 reads only the current phase's section of `PLAYBOOK.md` and its gate, checks the project file against them, and reports what's done, what's missing and whether the gate is met. A gate that needs a person's sign-off is flagged, never ticked.
+
 ## v1.6 — evals check
 Added an Evals check as an always-on practice: before a product or major change reaches real users, test the whole product, including failure and safety cases, and report what isn't covered. The user sets the pass bar and signs off release.
 

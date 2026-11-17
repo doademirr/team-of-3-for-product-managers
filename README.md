@@ -34,6 +34,7 @@ skills/
 └── market-gap-finder/  tool: review-driven market gap analysis (Phase-1 Discovery)
 PLAYBOOK.md             the 0→1 product playbook the generators ground on
 CODING-PRACTICES.md     the baseline the build-feature task follows
+GATEKEEPER.md           who decides: Claude alone, or the user (Step 4.5)
 ```
 
 The wired tasks: **write-prd**, **write-user-stories**, **prioritise-ideas** (divergent), and **build-feature** (code) — plus **market-gap-finder**, a *tool* task (it runs a real tool with its own gates instead of the generate→critique loop). One shared loop; only the generator and ruler change per task.
@@ -47,7 +48,7 @@ The wired tasks: **write-prd**, **write-user-stories**, **prioritise-ideas** (di
 ## Install
 
 1. Copy the `skills/` folders into your project's `.claude/skills/` (or your user-level skills directory).
-2. Copy `PLAYBOOK.md` and `CODING-PRACTICES.md` where the skills expect them (repo root, or adjust the paths in the SKILL files).
+2. Copy `PLAYBOOK.md`, `CODING-PRACTICES.md` and `GATEKEEPER.md` where the skills expect them (repo root, or adjust the paths in the SKILL files).
 3. Make the seam executable: `chmod +x .claude/skills/team-of-3/*.sh`
 4. Verify the seam: `bash .claude/skills/team-of-3/test-critic.sh` → `ALL GREEN`.
 5. In Claude Code, run `/team-of-3` and name your task (or let it locate your stage in the 0→1 build).

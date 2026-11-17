@@ -55,7 +55,7 @@ If Step 0.4 **resumed** a project, its stage is already known — **confirm and 
 The stage map still decides which task runs.
 
 - The user names a **wired** stage → proceed to Step 1 with that task.
-- **Tool tasks (e.g. market gap analysis → `market-gap-finder`)** are the exception to the loop: they are real tools with their *own* quality gates, not generate→critique tasks. Route straight to the tool's skill (`/market-gap-finder`), let it run (it handles its own approval + gates), then come back to **Step 5** for the next-stage nudge. **Do not** run Steps 1–6 / the critic loop on a tool task.
+- **Tool tasks (e.g. market gap analysis → `market-gap-finder`)** are the exception to the loop: they are real tools with their *own* quality gates, not generate→critique tasks. Route straight to the tool's skill (`/market-gap-finder`), let it run (it handles its own approval + gates), then come back to **Step 5** for the next-stage nudge. **Do not** run Steps 1–6 / the critic loop on a tool task, except Step 4.5: a decision the tool raises that the user hasn't made still goes through the Gatekeeper.
 - The user names an **unwired** stage → say so plainly, point to a separate skill/method if one exists, and offer the nearest wired task only if it genuinely fits. Never improvise an unwired task (Step 0).
 - The user already named a task explicitly (e.g. "/team-of-3 write a PRD") → skip the question, confirm the stage, go.
 
@@ -141,12 +141,23 @@ The seam runs the critic read-only (PM: `--sandbox read-only` with the draft emb
 - **Only `minor` left** → stop, present with the summary (as above).
 - **Any `moderate` or `critical` still left** → **escalate to the user** with a diagnose-then-escalate **named cause** — missing context · needs human judgment · low confidence · insufficient evidence · system failure. They decide. Never punt with a bare "we disagree."
 
+## Step 4.5: Gatekeeper — who decides (always)
+
+Before Claude acts on a decision the user hasn't made (a finding, a proposed piece of work, or a revision that changes scope, a rule or how results are calculated), sort it with `GATEKEEPER.md`. The framework is the same for every project; only the project's three inputs change.
+
+1. Read the project file's **Gatekeeper** line (harm question, Red list, tenets) and the project's decision log, if it has one. No Gatekeeper line → ask the user once for the three and record them there. Until they give them: in advice mode, skip the Gatekeeper for that project and follow the existing rules; once solo calls are on, every decision there goes to the user.
+2. Ask the 7 questions in order and stop at the first answer. Name the question number and the rule used.
+3. **Advice mode (until the user switches it on).** The Gatekeeper can add a check but never remove one. **PM** → the decision goes to the user (Step 5, "input required") with the question and the options, and a recommendation unless the decision changes how results are calculated (the framework gives none for those). This applies even if the project's rules would have let Claude decide. Any other outcome is advice only: the project's own rules and Step 4 still decide what Claude may do alone. For every decision that reaches the user, whichever rule sent it, ask them whether it needed them, and add a row to the Advice log in `GATEKEEPER.md`: the sort, the recommendation (or N/A), their call and their answer.
+4. **Switch-on bar.** Measured on the Advice log. Solo calls (every outcome except PM) switch on only when the user says so, after at least 15 rows, including at least 5 where the sort was an outcome other than PM, with: no row where the sort was an outcome other than PM and either the user's call differed or "Needed the PM?" is Yes; "Needed the PM?" No on at most 1 in 7 of the rows sorted PM; and "Recommendation matched?" Yes on at least 3 in 4 of the rows with a recommendation (Partly counts as half, N/A rows are left out).
+
+If the project has its own decision rules, the stricter answer wins.
+
 ## Step 5: Escalation gate — when the user sees output
 
 The user sees output **only** when one of these fires; otherwise the loop runs silently:
 
 1. **Final answer** (PASS) → present the artifact, mark it *"~70–80% — for review,"* **name the ruler version used** (e.g. "ruler: PRD checklist v2"), and include a short **iteration note** so the Claude↔critic exchange stays visible: rounds run · the verdict path (e.g. `ISSUES → ISSUES → PASS`) · each critic issue raised and how it was resolved · any items left unresolved or escalated. **For a divergent task (`prioritise-ideas`),** PASS means the **decision frame is ready**: present the matrix + crux + candidate shapes (single pick / primary+backups / parallel set), mark it *"decision-ready — for your call,"* and state plainly that **the judgment is the user's** — the frame is the deliverable, not a verdict.
-2. **Input required** → a BLOCKED cause, or a critic-vs-brief conflict needing the user's call.
+2. **Input required** → a BLOCKED cause, a critic-vs-brief conflict needing the user's call, or a Gatekeeper **PM** outcome (Step 4.5).
 3. **Delegate back** → something only the user can do (e.g. supply missing evidence).
 4. **System / process failure** → the fail-closed case. State plainly what *was* and *was not* reviewed.
 
