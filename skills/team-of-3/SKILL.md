@@ -46,6 +46,14 @@ If Step 0.4 **resumed** a project, its stage is already known — **confirm and 
 
 **Poke first (always).** Before finalising a PRD or building a new capability, run a small sample of real or realistic data through the roughest working version. Set a time limit. The output is a list of what we didn't know, added to the PRD's open questions. Nothing from this stage counts as finished. Real personal data stays private; use synthetic data if there's no permission. If a new project or capability reaches `write-prd` or `build-feature` with no poke done, offer it first.
 
+**Read the current phase (always, once the stage is known).** Before routing, read only this stage's section of `PLAYBOOK.md`, never the whole playbook:
+1. Find the line numbers of the playbook's `## ` headings (e.g. `grep -n "^## "`), then read from this phase's `## Phase` heading to the next `## ` heading. For a range such as "Phase 1–2", read each phase in it.
+2. Read this phase's row in the playbook's "Quick reference — phase checklist" table: its key output and the gate before the next phase.
+3. Check the project file (Step 0.4) against both, and tell the user in a few lines: what this phase needs, what the project file shows as done, what's missing, and whether the gate is **met**, **not met** or **unknown**. Count something as done only if the project file records it; if it isn't recorded, say "unknown" and ask. A gate that needs a person's sign-off (e.g. engineering or clinical) is flagged, never ticked by Claude.
+4. If the phase's heading isn't in the playbook, say so plainly and carry on with the stage map. Never guess which section applies.
+
+The stage map still decides which task runs.
+
 - The user names a **wired** stage → proceed to Step 1 with that task.
 - **Tool tasks (e.g. market gap analysis → `market-gap-finder`)** are the exception to the loop: they are real tools with their *own* quality gates, not generate→critique tasks. Route straight to the tool's skill (`/market-gap-finder`), let it run (it handles its own approval + gates), then come back to **Step 5** for the next-stage nudge. **Do not** run Steps 1–6 / the critic loop on a tool task.
 - The user names an **unwired** stage → say so plainly, point to a separate skill/method if one exists, and offer the nearest wired task only if it genuinely fits. Never improvise an unwired task (Step 0).
