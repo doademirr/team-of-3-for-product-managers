@@ -248,7 +248,7 @@ Sum the layers. A build with multiple L-rated layers is a 3–6 month project mi
 
 You now have user desirability (concept validation), design validation (prototype testing), and technical complexity (discovery + sizing). Use both to score options.
 
-Solutions should carry long-term vision and strategy, rather than "let's slap on AI by default", "let's copy what our competitor are doing", or short-sighted bandage solutions. AI added to a broken experience makes a more expensive broken experience.
+Solutions should carry long-term vision and strategy, rather than "let's slap on AI by default", "let's copy what our competitors are doing", or short-sighted bandage solutions. AI added to a broken experience makes a more expensive broken experience.
 
 **Framework 1 — Value vs. Complexity**
 
@@ -291,6 +291,16 @@ Use to rank options or justify the decision to stakeholders.
 **RICE Score = (Reach × Impact × Confidence) ÷ Effort**
 
 Higher score = higher priority.
+
+**Before you decide: what the scores miss**
+
+Neither framework asks these, so answer them for your top options:
+
+| Question | Why it matters |
+|---|---|
+| **What gets pushed back?** If we do this, what don't we do, or do later? Include work already planned or under way. | Every yes is a no to something else. In a small team, that's the real cost. |
+| **What happens if it waits?** What changes if this waits a quarter? Is there a deadline, such as a renewal, a regulation or a contract? | The scores measure value, not timing. |
+| **Is there additional money?** Tools or licences to buy, data or API fees, hosting, paid outside help. One-off or ongoing? | Effort only counts the team's time. Don't count that time again here. |
 
 ### Scope the chosen solution — MoSCoW
 
