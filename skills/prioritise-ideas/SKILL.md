@@ -40,6 +40,9 @@ Build an **options × criteria matrix**. For each idea:
 - Score against the agreed criteria (+ evidence tier feeding Confidence).
 - Its **strongest case** (one line) and its **key risk** (one line).
 - **Tag the resources it needs**, from a fixed vocabulary so ideas are comparable: **design · frontend · backend · data · content · GTM** (add "other: …" only if genuinely none fit). Lightweight tags — no effort estimates, no capacity maths.
+- **What it pushes back** (one line): if we do this, what don't we do, or do later? Include work already planned or in progress, not just the other ideas on the list.
+- **What happens if it waits** (one line): what changes if this waits a quarter? Is there a deadline, such as a renewal, a regulation or a contract?
+- **Additional money** (optional): money spent on top of the team's time, such as tools or licences to buy, data or API fees, hosting, or paid outside help. Say whether each is one-off or ongoing. The team's time is already counted in Effort, so never count it again here. If a cost is unknown, list it as an open question, never a guess.
 
 ## Step 5: Cluster + frame the decision
 
